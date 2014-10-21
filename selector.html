@@ -1,0 +1,25 @@
+<script src="https://eshop.orange.md/Content3/scripts/jquery-1.11.0.min.js"></script>
+<style>select[name="languageId"]{display:none}</style>
+
+<script>
+  $(function(){
+	$('.lng_sel').on('change', function(){
+  	var el_index=$('.lng_sel option:selected').index();
+  	var value_new=$('select[name="languageId"] option:eq('+el_index+')').val();	  
+  	$('select[name="languageId"]').val(value_new);
+  	$('form[name="fm"]').submit();
+});
+  });
+</script>
+
+
+<select class="lng_sel"><option>romana</option><option>русский</option><option>english</option></select>
+
+
+<form action="https://my.orange.md/web/guest/main?p_p_id=82&amp;p_p_lifecycle=1&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_col_count=1&amp;_82_struts_action=%2Flanguage%2Fview" method="post" name="fm">
+<select name="languageId" onchange="submitForm(document.fm);">
+<option selected="" style="padding-left: 26px; margin: 1px; background-image: url(https://my.orange.md/html/themes/orange-moldova-theme-abonament/images/language/ro_RO.png); background-position: 0% 50%; background-repeat: no-repeat;" value="ro_RO">română (România)</option>
+<option style="padding-left: 26px; margin: 1px; background-image: url(https://my.orange.md/html/themes/orange-moldova-theme-abonament/images/language/ru_RU.png); background-position: 0% 50%; background-repeat: no-repeat;" value="ru_RU">русский (Россия)</option>
+<option style="padding-left: 26px; margin: 1px; background-image: url(https://my.orange.md/html/themes/orange-moldova-theme-abonament/images/language/en_EN.png); background-position: 0% 50%; background-repeat: no-repeat;" value="en_EN">English (EN)</option>
+</select>
+</form>
